@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Paleta Blanco y Negro */
     --bg-main: #FFFFFF;
     --bg-alt: #FFFFFF;
     --text-main: #000000;
@@ -15,8 +14,6 @@
     --border-color: #000000;
     --header-bg: #000000;
     --header-text: #FFFFFF;
-
-    /* Colores de Énfasis Conservados */
     --terracotta: #C1440E;
     --gold: #B8860B;
     --sage: #7A8C6E;
@@ -33,7 +30,6 @@
     line-height: 1.7;
   }
 
-  /* TIPOGRAFÍAS ASIGNADAS */
   h1, h2, h3, .section-num, .progress-count, .cap-stat .big {
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 1px;
@@ -43,7 +39,6 @@
     font-family: Arial, sans-serif;
   }
 
-  /* COVER */
   .cover {
     background: var(--header-bg);
     color: var(--header-text);
@@ -115,14 +110,12 @@
 
   .cover-cherry { margin-top: 60px; opacity: 0.8; }
 
-  /* PAGE LAYOUT */
   .page {
     max-width: 900px;
     margin: 0 auto;
     padding: 60px 40px;
   }
 
-  /* SECTION HEADERS */
   .section-header {
     display: flex;
     align-items: center;
@@ -159,13 +152,9 @@
     margin: 60px 0;
   }
 
-  /* INTRO CARD */
   .intro-card {
     background: var(--bg-alt);
-    border-left: 4px solid var(--border-color);
-    border-top: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border: 1px solid var(--border-color);
     padding: 24px 28px;
     margin-bottom: 48px;
   }
@@ -178,82 +167,6 @@
 
   .intro-card p { font-size: 15px; }
 
-  /* CHECKLIST */
-  .checklist-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  @media (max-width: 600px) { .checklist-grid { grid-template-columns: 1fr; } }
-
-  .check-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    background: var(--bg-main);
-    border: 1px solid var(--border-color);
-    padding: 14px 16px;
-    border-radius: 0px;
-  }
-
-  .check-box {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--border-color);
-    flex-shrink: 0;
-    margin-top: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-  }
-
-  .check-label { flex: 1; }
-  .check-label strong { display: block; font-size: 14px; font-weight: bold; color: var(--text-main); }
-  .check-label span { font-size: 12px; color: var(--text-muted); }
-
-  .check-tag {
-    font-size: 10px;
-    padding: 2px 8px;
-    border-radius: 10px;
-    flex-shrink: 0;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    margin-top: 2px;
-  }
-
-  .tag-esencial { background: #FDECEA; color: var(--terracotta); border: 1px solid var(--terracotta); }
-  .tag-opcional { background: #EEF4EC; color: var(--sage); border: 1px solid var(--sage); }
-  .tag-basico { background: #FFF3E0; color: #E65100; border: 1px solid #E65100; }
-
-  /* PROGRESS BAR */
-  .checklist-progress {
-    background: var(--bg-alt);
-    border: 1px solid var(--border-color);
-    padding: 16px 20px;
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .progress-label { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; color: var(--text-main); flex-shrink: 0; }
-  .progress-bar-bg {
-    flex: 1;
-    background: #EEEEEE;
-    height: 8px;
-    border: 1px solid var(--border-color);
-  }
-  .progress-bar-fill {
-    height: 100%;
-    background: var(--text-main);
-    width: 0%;
-  }
-  .progress-count { font-size: 20px; color: var(--text-main); flex-shrink: 0; }
-
-  /* EQUIPMENT DIAGRAM */
   .diagram-container {
     background: white;
     border: 1px solid var(--border-color);
@@ -271,7 +184,6 @@
     margin-bottom: 20px;
   }
 
-  /* RESOURCES TABLE */
   .resources-table {
     width: 100%;
     border-collapse: collapse;
@@ -300,7 +212,6 @@
   .qty { font-weight: bold; color: var(--text-main); }
   .note-small { font-size: 11px; color: var(--text-muted); display: block; margin-top: 4px; }
 
-  /* PROCESS STEPS */
   .process-flow {
     position: relative;
     padding-left: 40px;
@@ -396,7 +307,6 @@
 
   .step-alert::before { content: '⚠ IMPORTANTE: '; }
 
-  /* CAPACITY TABLE */
   .capacity-box {
     background: var(--bg-main);
     border: 2px solid var(--border-color);
@@ -437,11 +347,7 @@
   .cap-stat .unit { font-family: Arial, sans-serif; font-weight: bold; font-size: 13px; color: var(--text-main); display: block; margin-top: 4px; }
   .cap-stat .desc { font-family: Arial, sans-serif; font-size: 11px; color: var(--text-muted); margin-top: 8px; display: block; }
 
-  .capacity-notes { font-size: 13px; color: var(--text-main); line-height: 1.8; }
-  .capacity-notes li { margin-left: 20px; }
-
-  /* COST ESTIMATE */
-  .cost-table2 { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:16px; }
+  .cost-table2 { width:100%; border-collapse:collapse; font-size:12px; margin-bottom:16px; }
   .cost-table2 th { background:var(--header-bg); color:var(--header-text); padding:10px 12px; text-align:left; font-weight:bold; font-size:11px; text-transform:uppercase; letter-spacing:0.8px; border: 1px solid var(--border-color); }
   .cost-table2 td { padding:10px 12px; border: 1px solid var(--border-color); vertical-align:top; }
   .cost-table2 .total td { font-weight:bold; border-top:2px solid var(--border-color); background:#EEEEEE; }
@@ -452,8 +358,10 @@
   .nota-small { font-size:11px; color:var(--text-muted); display:block; margin-top:4px; font-style: italic;}
   .col-item { font-weight:bold; color:var(--text-main); }
   .col-item span { display:block; font-weight:normal; font-size:11px; color:var(--text-muted); margin-top:2px; }
+  .tag-esencial { color: var(--terracotta); font-weight: bold; border: 1px solid var(--terracotta); padding: 2px 4px; font-size: 9px; }
+  .tag-basico { color: #E65100; font-weight: bold; border: 1px solid #E65100; padding: 2px 4px; font-size: 9px; }
+  .tag-opcional { color: var(--sage); font-weight: bold; border: 1px solid var(--sage); padding: 2px 4px; font-size: 9px; }
 
-  /* FOOTER */
   .manual-footer {
     text-align: center;
     padding: 40px;
@@ -468,30 +376,23 @@
 
 <div class="cover">
   <div class="cover-content">
-    <div class="cover-badge">Manual de Producción Artesanal · Escala PYME</div>
-    <h1>Tisana de<br><em>Cascara</em></h1>
-    <p class="cover-sub">Pulpa deshidratada de cereza de cafeto · Coffea arabica</p>
+    <div class="cover-badge">Manual de Producción Artesanal · Escala PYME [cite: 1]</div>
+    <h1>Tisana de<br><em>Cáscara</em> [cite: 2]</h1>
+    <p class="cover-sub">Pulpa deshidratada de cereza del cafeto · Coffea arabica [cite: 3]</p>
     <div class="cover-meta">
       <div class="cover-meta-item">
         <span class="num">10</span>
-        <span class="lbl">Pasos de proceso</span>
+        <span class="lbl">Pasos de proceso [cite: 4]</span>
       </div>
       <div class="cover-meta-item">
         <span class="num">1–2 kg</span>
-        <span class="lbl">Producción diaria seca</span>
+        <span class="lbl">Producción diaria [cite: 4]</span>
       </div>
       <div class="cover-meta-item">
-        <span class="num">~$8K</span>
-        <span class="lbl">Inversión inicial MXN</span>
+        <span class="num">~$4.1K</span>
+        <span class="lbl">Inversión inicial MXN [cite: 4]</span>
       </div>
     </div>
-    <svg class="cover-cherry" width="120" height="120" viewBox="0 0 120 120">
-      <circle cx="35" cy="70" r="22" fill="#C1440E" opacity="0.8"/>
-      <circle cx="75" cy="75" r="22" fill="#8B0000" opacity="0.8"/>
-      <path d="M35 48 Q55 20 85 15 Q75 35 55 48" fill="none" stroke="#4A7C59" stroke-width="3.5" stroke-linecap="round"/>
-      <line x1="55" y1="48" x2="35" y2="48" stroke="#4A7C59" stroke-width="3" stroke-linecap="round"/>
-      <line x1="55" y1="48" x2="75" y2="53" stroke="#4A7C59" stroke-width="3" stroke-linecap="round"/>
-    </svg>
   </div>
 </div>
 
@@ -499,150 +400,13 @@
   <div class="intro-card">
     <h3>¿Qué es la cascara?</h3>
     <p>
-      La cascara (del árabe <em>qishr</em>) es la piel y mucílago deshidratado de la cereza de café. En México es un subproducto subutilizado del beneficiado húmedo que, correctamente procesado, produce una tisana afrutada con notas de tamarindo, rosa mosqueta e hibisco. Contiene cafeína (aprox. 111 mg/L), polifenoles y antioxidantes. Es legal como alimento y no requiere registro sanitario especial en escala artesanal, aunque sí aplican buenas prácticas de higiene conforme a <strong>NOM-251-SSA1</strong>.
+      La cascara (del árabe <em>qishr</em>) es la piel y mucílago deshidratado de la cereza de café. En México es un subproducto subutilizado del beneficiado húmedo que, correctamente procesado, produce una tisana afrutada con notas de tamarindo, rosa mosqueta e hibisco. Contiene cafeína (aprox. 111 mg/L), polifenoles y antioxidantes. Es legal como alimento y no requiere registro sanitario especial en escala artesanal, aunque sí aplican buenas prácticas de higiene conforme a <strong>NOM-251-SSA1</strong>[cite: 16].
     </p>
-  </div>
-
-  <div class="section-header">
-    <div class="section-num">01</div>
-    <div class="section-title">
-      <p>Checklist de adquisición</p>
-      <h2>Equipo a Conseguir</h2>
-    </div>
-  </div>
-
-  <div class="checklist-grid">
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Deshidratador de bandejas</strong>
-        <span>5–10 bandejas, termostato 35–75 °C, 500–1000 W. Ej. Excalibur 9, Cosori, marca china genérica.</span>
-      </div>
-      <span class="check-tag tag-esencial">ESENCIAL</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Báscula digital de cocina</strong>
-        <span>Capacidad 5 kg, precisión ±1 g. Para control de lotes y rendimiento.</span>
-      </div>
-      <span class="check-tag tag-esencial">ESENCIAL</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Tinas o baldes de plástico grado alimenticio</strong>
-        <span>15–20 L, HDPE o PP (código reciclaje ▲2 o ▲5). Para lavado y remojo.</span>
-      </div>
-      <span class="check-tag tag-esencial">ESENCIAL</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Colador / tamiz de malla fina (acero inox.)</strong>
-        <span>Malla 1–2 mm para escurrir y clasificar la pulpa ya seca.</span>
-      </div>
-      <span class="check-tag tag-esencial">ESENCIAL</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Selladora de bolsas por impulso</strong>
-        <span>30–40 cm de ancho. Para sellar bolsas kraft o aluminio-laminado.</span>
-      </div>
-      <span class="check-tag tag-esencial">ESENCIAL</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Termómetro digital de sonda</strong>
-        <span>Rango −10 °C a 200 °C. Para verificar temperatura interior del deshidratador.</span>
-      </div>
-      <span class="check-tag tag-esencial">ESENCIAL</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Tablas de corte y cuchillos (acero inox.)</strong>
-        <span>Uso exclusivo para alimentos. Para separar manualmente pulpa dañada.</span>
-      </div>
-      <span class="check-tag tag-basico">BÁSICO</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Contenedores herméticos de almacenamiento</strong>
-        <span>Vidrio o PET con sello, oscuros o en lugar sin luz. 3–5 unidades de 1–2 kg.</span>
-      </div>
-      <span class="check-tag tag-basico">BÁSICO</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Refractómetro manual (Brix)</strong>
-        <span>Rango 0–32° Brix. Para verificar la infusión final como CQ.</span>
-      </div>
-      <span class="check-tag tag-basico">BÁSICO</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Medidor de pH</strong>
-        <span>Digital portátil. La infusión debe quedar pH 3.0–4.5 para estabilidad.</span>
-      </div>
-      <span class="check-tag tag-basico">BÁSICO</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Mesa de trabajo de acero inoxidable</strong>
-        <span>O tabla grande sobre superficie lavable. Para extensión y selección de pulpa.</span>
-      </div>
-      <span class="check-tag tag-basico">BÁSICO</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Malla o tela de secado adicional</strong>
-        <span>Red de nylon 1×1 m. Para pre-secado al sol (optativo, reduce tiempo de deshidratador).</span>
-      </div>
-      <span class="check-tag tag-opcional">OPCIONAL</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Activímetro (Aw meter)</strong>
-        <span>Mide actividad de agua; garantiza vida de anaquel. Alta inversión pero crítico para escala.</span>
-      </div>
-      <span class="check-tag tag-opcional">OPCIONAL</span>
-    </div>
-
-    <div class="check-item">
-      <div class="check-box"></div>
-      <div class="check-label">
-        <strong>Impresora de etiquetas (térmica)</strong>
-        <span>Para lote, fecha y datos NOM-051. Ej. DYMO, Brother QL, Zebra ZD220.</span>
-      </div>
-      <span class="check-tag tag-opcional">OPCIONAL</span>
-    </div>
   </div>
 
   <hr class="section-divider">
   <div class="section-header">
-    <div class="section-num">02</div>
+    <div class="section-num">01</div>
     <div class="section-title">
       <p>Referencia visual</p>
       <h2>Diagrama del Equipo</h2>
@@ -660,22 +424,16 @@
           <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.12)"/>
         </filter>
       </defs>
-
       <rect width="820" height="520" fill="#FFFFFF" rx="8" stroke="#000000" stroke-width="1"/>
       <rect x="10" y="10" width="800" height="500" fill="none" stroke="#000000" stroke-width="1" rx="6" stroke-dasharray="4,3"/>
-
       <rect x="20" y="20" width="180" height="480" fill="#FFF3E6" rx="6" opacity="0.5"/>
       <text x="110" y="42" text-anchor="middle" font-family="'Montserrat',sans-serif" font-size="11" fill="#C1440E" font-weight="bold">Zona Recepción</text>
-
       <rect x="210" y="20" width="180" height="480" fill="#F0F7EE" rx="6" opacity="0.5"/>
       <text x="300" y="42" text-anchor="middle" font-family="'Montserrat',sans-serif" font-size="11" fill="#4A7C59" font-weight="bold">Zona Lavado</text>
-
       <rect x="400" y="20" width="200" height="480" fill="#FFF8E7" rx="6" opacity="0.5"/>
       <text x="500" y="42" text-anchor="middle" font-family="'Montserrat',sans-serif" font-size="11" fill="#B8860B" font-weight="bold">Zona Deshidratación</text>
-
       <rect x="610" y="20" width="200" height="480" fill="#F5F0F8" rx="6" opacity="0.5"/>
       <text x="710" y="42" text-anchor="middle" font-family="'Montserrat',sans-serif" font-size="11" fill="#6B3A2A" font-weight="bold">Zona Envasado / CQ</text>
-
       <g filter="url(#shadow)">
         <rect x="30" y="65" width="160" height="60" rx="5" fill="white" stroke="#000" stroke-width="1.5"/>
         <rect x="30" y="65" width="160" height="8" rx="5" fill="#E8A87C"/>
@@ -684,7 +442,6 @@
       </g>
       <text x="110" y="93" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#000" font-weight="bold">Mesa de Trabajo</text>
       <text x="110" y="110" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">Selección inicial</text>
-
       <g filter="url(#shadow)">
         <rect x="50" y="165" width="120" height="50" rx="5" fill="white" stroke="#000" stroke-width="1.5"/>
         <rect x="60" y="175" width="100" height="30" rx="3" fill="#EEE"/>
@@ -693,7 +450,6 @@
       </g>
       <text x="110" y="233" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Báscula digital</text>
       <text x="110" y="247" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">±1 g · 5 kg cap.</text>
-
       <g filter="url(#shadow)">
         <ellipse cx="255" cy="115" rx="55" ry="18" fill="#CDEAF5" stroke="#7EC8E3" stroke-width="1.5"/>
         <rect x="200" y="100" width="110" height="55" rx="0 0 6 6" fill="#DDEEFA" stroke="#7EC8E3" stroke-width="1.5"/>
@@ -706,7 +462,6 @@
       </g>
       <text x="285" y="220" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Tinas de lavado</text>
       <text x="285" y="234" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">15–20 L · PP/HDPE</text>
-
       <g filter="url(#shadow)">
         <path d="M225 280 Q285 340 345 280" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
         <line x1="285" y1="280" x2="285" y2="310" stroke="#000" stroke-width="3" stroke-linecap="round"/>
@@ -717,7 +472,6 @@
       </g>
       <text x="285" y="345" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Tamiz / Colador</text>
       <text x="285" y="359" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">Acero inox · malla 1–2 mm</text>
-
       <g filter="url(#shadow)">
         <rect x="412" y="70" width="175" height="220" rx="8" fill="#FFF" stroke="#000" stroke-width="2"/>
         <rect x="420" y="85" width="159" height="22" rx="3" fill="white" stroke="#000" stroke-width="1"/>
@@ -742,7 +496,6 @@
       </g>
       <text x="499" y="310" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Deshidratador de bandejas</text>
       <text x="499" y="324" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">500–1000 W · 5–10 bandejas · 55–65 °C</text>
-
       <g filter="url(#shadow)">
         <rect x="622" y="70" width="175" height="55" rx="8" fill="#EEE" stroke="#000" stroke-width="1.5"/>
         <rect x="630" y="100" width="159" height="8" rx="2" fill="#CC3300" opacity="0.9"/>
@@ -757,7 +510,6 @@
       </g>
       <text x="710" y="185" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Selladora por impulso</text>
       <text x="710" y="199" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">30–40 cm · para bolsas kraft/alu</text>
-
       <g filter="url(#shadow)">
         <rect x="625" y="230" width="20" height="80" rx="10" fill="#DDD" stroke="#000" stroke-width="1.5"/>
         <circle cx="635" cy="220" r="12" fill="#88CCFF" stroke="#000" stroke-width="1.5" opacity="0.7"/>
@@ -769,7 +521,6 @@
       </g>
       <text x="670" y="335" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Refractómetro + pH</text>
       <text x="670" y="349" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">Control de calidad</text>
-
       <g filter="url(#shadow)">
         <rect x="715" y="230" width="90" height="50" rx="5" fill="white" stroke="#000" stroke-width="1.5"/>
         <rect x="725" y="238" width="70" height="28" rx="3" fill="#EEE"/>
@@ -778,14 +529,12 @@
       </g>
       <text x="760" y="297" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Báscula de dosif.</text>
       <text x="760" y="311" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">Pesado de sachets</text>
-
       <line x1="110" y1="150" x2="110" y2="158" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
       <line x1="170" y1="190" x2="210" y2="130" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
       <line x1="285" y1="240" x2="285" y2="268" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
       <line x1="345" y1="310" x2="405" y2="200" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
       <line x1="587" y1="150" x2="618" y2="100" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
       <line x1="587" y1="250" x2="618" y2="270" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
-
       <text x="163" y="168" font-family="Arial,sans-serif" font-size="9" fill="#000" font-weight="bold">Pesado</text>
       <text x="215" y="175" font-family="Arial,sans-serif" font-size="9" fill="#000" font-weight="bold">Lavado</text>
       <text x="310" y="265" font-family="Arial,sans-serif" font-size="9" fill="#000" font-weight="bold">Escurrido</text>
@@ -797,96 +546,7 @@
 
   <hr class="section-divider">
   <div class="section-header">
-    <div class="section-num">03</div>
-    <div class="section-title">
-      <p>Checklist de recursos</p>
-      <h2>Insumos y Materiales</h2>
-    </div>
-  </div>
-
-  <table class="resources-table">
-    <thead>
-      <tr>
-        <th>Insumo</th>
-        <th>Cantidad referencia (por lote ~10 kg pulpa fresca)</th>
-        <th>Especificación / Notas</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Pulpa de cereza de café (cascara fresca)</strong></td>
-        <td class="qty">10 kg</td>
-        <td>Recién despulpada, sin fermentar más de 8 hrs. Variedad arábica preferida.
-          <span class="note-small">Rendimiento aprox. 10–15% → 1.0–1.5 kg de producto seco.</span>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>Agua potable</strong></td>
-        <td class="qty">~60 L</td>
-        <td>Para lavado (3 cambios) + enjuague. Agua de red o filtrada.
-          <span class="note-small">No usar agua de pozo sin cloro residual.</span>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>Hipoclorito de sodio (NaClO) grado alimenticio</strong></td>
-        <td class="qty">~6 mL</td>
-        <td>Diluir a 200 ppm para desinfección. Solución al 5.25–6% (cloro doméstico sin fragancia).
-          <span class="note-small">200 ppm = 6 mL de cloro 6% en 15 L agua.</span>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>Bolsas kraft con barrera interior</strong>
-          <br><em style="font-size:12px">o bolsas resellables aluminio-laminado</em>
-        </td>
-        <td class="qty">30–50 pzas / lote</td>
-        <td>Para empaques de 25–50 g (infusión individual) o 100 g (granel).
-          <span class="note-small">Proveedores: Uline México, Alibaba, mercado local de envases.</span>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>Sachets filtrantes de papel / tela no tejida</strong></td>
-        <td class="qty">Opcional: 50–100 pzas</td>
-        <td>Si se quiere presentación tipo "teabag". Papel de fibra larga o PLA compostable.
-          <span class="note-small">Tamaño sugerido: 6×8 cm, 3–5 g de cascara por sachet.</span>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>Etiquetas adhesivas</strong></td>
-        <td class="qty">30–50 pzas</td>
-        <td>Con: nombre del producto, peso neto, lote, fecha de producción/caducidad, modo de preparación.
-          <span class="note-small">Obligatorio conforme a NOM-051-SCFI/SSA1.</span>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>Electricidad</strong></td>
-        <td class="qty">5–12 kWh / lote</td>
-        <td>Para deshidratador (10–14 hrs a 500–1000 W).
-          <span class="note-small">Costo aprox. $10–20 MXN por lote a tarifa residencial.</span>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>Guantes de nitrilo</strong></td>
-        <td class="qty">1 par / sesión</td>
-        <td>Desechables. Obligatorio para BPM (Buenas Prácticas de Manufactura).
-          <span class="note-small">Caja de 100: ~$200–300 MXN.</span>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>Cubre-bocas / gorra</strong></td>
-        <td class="qty">1 por operador</td>
-        <td>BPM básicas. No son negociables para venta.</td>
-      </tr>
-      <tr>
-        <td><strong>Solución sanitizante para superficies</strong></td>
-        <td class="qty">~200 mL</td>
-        <td>Para limpiar mesa y utensilios antes de operar. Amonio cuaternario o alcohol 70%.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <hr class="section-divider">
-  <div class="section-header">
-    <div class="section-num">04</div>
+    <div class="section-num">02</div>
     <div class="section-title">
       <p>Procedimiento paso a paso</p>
       <h2>Proceso de Producción</h2>
@@ -919,9 +579,6 @@
           <span class="step-title">Pesado inicial del lote</span>
         </div>
         <p>Pesar la pulpa seleccionada en la báscula y anotar el peso en el registro de lote (cuaderno o hoja de control). Este dato permite calcular el rendimiento de cada procesamiento y detectar variaciones.</p>
-        <div class="step-params">
-          <div class="param"><strong>Registro:</strong> Fecha, peso bruto, origen del café</div>
-        </div>
       </div>
     </div>
 
@@ -933,11 +590,6 @@
           <span class="step-title">Lavado y desinfección</span>
         </div>
         <p>Sumergir la pulpa en la tina 1 con solución de NaClO a <strong>200 ppm</strong> durante 5 minutos con agitación manual. Enjuagar con agua limpia en tina 2, al menos 2 veces, hasta que el agua salga transparente y sin olor a cloro.</p>
-        <div class="step-params">
-          <div class="param"><strong>Solución:</strong> 6 mL cloro 6% en 15 L agua</div>
-          <div class="param"><strong>Tiempo contacto:</strong> 5 min</div>
-          <div class="param"><strong>Enjuagues:</strong> 2 mínimo</div>
-        </div>
       </div>
     </div>
 
@@ -949,10 +601,6 @@
           <span class="step-title">Escurrido y pre-secado</span>
         </div>
         <p>Pasar la pulpa lavada por el tamiz para eliminar exceso de agua. <em>Opcional pero recomendado:</em> extender en malla a la sombra (no al sol directo) por 1–2 horas antes de meter al deshidratador. Esto reduce el tiempo de deshidratación y el consumo eléctrico.</p>
-        <div class="step-params">
-          <div class="param"><strong>Tiempo pre-secado:</strong> 1–2 hrs</div>
-          <div class="param"><strong>Condición:</strong> Sombra, ventilación natural</div>
-        </div>
       </div>
     </div>
 
@@ -964,11 +612,6 @@
           <span class="step-title">Deshidratación</span>
         </div>
         <p>Distribuir la pulpa en capas delgadas (no más de 1 cm de grosor) sobre las bandejas del deshidratador. No amontonar; el aire debe circular entre las piezas. Programar a <strong>55–65 °C</strong> por <strong>10–14 horas</strong>. A mitad del proceso (~5–6 hrs), voltear la pulpa manualmente y rotar las bandejas de posición.</p>
-        <div class="step-params">
-          <div class="param"><strong>Temperatura:</strong> 55–65 °C</div>
-          <div class="param"><strong>Tiempo:</strong> 10–14 hrs</div>
-          <div class="param"><strong>Grosor capa:</strong> ≤ 1 cm</div>
-        </div>
       </div>
     </div>
 
@@ -976,7 +619,7 @@
 
   <hr class="section-divider">
   <div class="section-header">
-    <div class="section-num">05</div>
+    <div class="section-num">03</div>
     <div class="section-title">
       <p>Proyección operativa</p>
       <h2>Capacidad Diaria de Procesamiento</h2>
@@ -1006,53 +649,253 @@
 
   <hr class="section-divider">
   <div class="section-header">
-    <div class="section-num">06</div>
+    <div class="section-num">04</div>
     <div class="section-title">
-      <p>Referencia financiera</p>
-      <h2>Inversión Inicial Estimada</h2>
+      <p>Verificado en línea · Oct 2024 – Mar 2025 [cite: 6]</p>
+      <h2>Checklist de Equipo con Cotizaciones Reales</h2>
+    </div>
+  </div>
+
+  <div style="background:#FFFFFF; border:1px dashed var(--border-color); padding:12px 16px; margin-bottom:20px; font-size:12px;">
+    <strong>Nota metodológica:</strong> Los rangos de precio provienen de cotizaciones verificadas en MercadoLibre México, Amazon México, Zona Chef, contenedoresdeplasticomexico.com, vevor.mx y GreenTech Instruments durante el periodo octubre 2024 – marzo 2025. El rango refleja la diferencia entre la opción mínima viable y la opción semi-profesional. Los precios pueden variar ±10–15% según temporada y disponibilidad. No incluyen IVA ni envío[cite: 8].
+  </div>
+
+  <table class="cost-table2">
+    <thead>
+      <tr>
+        <th style="width:22%">Equipo / Insumo</th>
+        <th style="width:10%">Tipo</th>
+        <th style="width:15%">Rango MXN</th>
+        <th style="width:20%">Opción económica</th>
+        <th style="width:20%">Opción recomendada</th>
+        <th style="width:13%">Dónde comprar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="col-item">Deshidratador de bandejas<span>10 bandejas | 800–1000 W | 55–75 °C | Timer</span></span></td>
+        <td><span class="tag-esencial">ESENCIAL</span></td>
+        <td><span class="rango">$1,900 – $6,890 MXN</span></td>
+        <td><strong>WETTE 10 ban. 800W</strong><br><span class="eco">$1,900–$2,300</span></td>
+        <td><strong>VEVOR 10 ban. 1000W</strong><br><span class="pro">Circulación 360°, timer 48 hrs<br>$3,200–$4,500</span></td>
+        <td><span class="source-tag">MercadoLibre / vevor.mx / Zona Chef (MIGSA $6,890)</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Báscula digital<span>5–10 kg | Precisión ±1 g | Función tara</span></span></td>
+        <td><span class="tag-esencial">ESENCIAL</span></td>
+        <td><span class="rango">$129 – $600 MXN</span></td>
+        <td><strong>Homex / DAQI genérica</strong><br><span class="eco">LCD, pilas AA, función tara<br>$129–$250</span></td>
+        <td><strong>Adir 1676 / RHINO BAPRE</strong><br><span class="pro">Plato inox, mayor durabilidad<br>$350–$600</span></td>
+        <td><span class="source-tag">Amazon MX / MercadoLibre (Truper BASE-5EA en ferreterías ~$420)</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Selladora de bolsas por impulso<span>40 cm | 400–500 W | Barra teflón</span></span></td>
+        <td><span class="tag-esencial">ESENCIAL</span></td>
+        <td><span class="rango">$417 – $1,249 MXN</span></td>
+        <td><strong>DDCAT / YUGUO 40cm</strong><br><span class="eco">Sella PE, PP, Mylar; 8 ajustes<br>$417–$662</span></td>
+        <td><strong>Rhino SELIM-400 40cm 500W</strong><br><span class="pro">Temporizador, barra teflón, +5k vendidos<br>$989–$1,249</span></td>
+        <td><span class="source-tag">MercadoLibre</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Tinas/cubetas grado alimenticio ×2<span>20 L | HDPE o PP | Con tapa</span></span></td>
+        <td><span class="tag-esencial">ESENCIAL</span></td>
+        <td><span class="rango">$160 – $400 MXN (par)</span></td>
+        <td><strong>HDPE genérica sin tapa</strong><br><span class="eco">Apta FDA, válida para lavado<br>$80–$120 c/u</span></td>
+        <td><strong>PP con tapa sello inviolable</strong><br><span class="pro">Cert. ISO 9001 + FSSC 22000<br>$150–$200 c/u</span></td>
+        <td><span class="source-tag">contenedoresdeplasticomexico.com / iea-soluciones.com</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Tamiz / colador acero inoxidable<span>Malla 1–2 mm | Asa doble | Inox</span></span></td>
+        <td><span class="tag-esencial">ESENCIAL</span></td>
+        <td><span class="rango">$150 – $500 MXN</span></td>
+        <td><strong>Colador cocina genérico inox</strong><br><span class="eco">Suficiente para escala artesanal<br>$150–$250</span></td>
+        <td><strong>Tamiz profesional malla doble</strong><br><span class="pro">Mayor superficie, malla intercambiable<br>$350–$500</span></td>
+        <td><span class="source-tag">MercadoLibre / Amazon MX</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Termómetro digital de sonda<span>Rango −10 a 200 °C | Sonda acero inox</span></span></td>
+        <td><span class="tag-esencial">ESENCIAL</span></td>
+        <td><span class="rango">$150 – $450 MXN</span></td>
+        <td><strong>ThermoPop / tipo lápiz genérico</strong><br><span class="eco">Respuesta rápida<br>$150–$250</span></td>
+        <td><strong>ThermoPro TP19H / RHINO</strong><br><span class="pro">Pantalla rotatoria, IP65<br>$300–$450</span></td>
+        <td><span class="source-tag">Amazon MX / MercadoLibre</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Refractómetro Brix<span>0–32° Brix | Compensación temperatura (ATC)</span></span></td>
+        <td><span class="tag-basico">BÁSICO</span></td>
+        <td><span class="rango">$300 – $1,399 MXN</span></td>
+        <td><strong>Óptico manual 0-32° ATC genérico</strong><br><span class="eco">Sin baterías, suficiente para CQ básico<br>$300–$600</span></td>
+        <td><strong>GOYOJO digital 0-55° Brix</strong><br><span class="pro">Pantalla retroiluminada, ±0.2° precisión<br>$909–$1,399</span></td>
+        <td><span class="source-tag">MercadoLibre (HANNA/Milwaukee: $2,999–$3,500 laboratorio)</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Medidor de pH digital<span>Rango 0–14 | Precisión ±0.1 | Portátil</span></span></td>
+        <td><span class="tag-basico">BÁSICO</span></td>
+        <td><span class="rango">$200 – $800 MXN</span></td>
+        <td><strong>Tipo lápiz 0–14 pH genérico</strong><br><span class="eco">Auto-calibración, funcional para infusiones<br>$200–$350</span></td>
+        <td><strong>YINMIK / Apera PC60</strong><br><span class="pro">Cal. 3 puntos, incluye buffers, IP67<br>$500–$800</span></td>
+        <td><span class="source-tag">Amazon MX / MercadoLibre (HANNA HI99161: ~$4,500+)</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Contenedores herméticos de almacenamiento<span>Vidrio o PET | Cierre hermético | 1–2 kg c/u</span></span></td>
+        <td><span class="tag-basico">BÁSICO</span></td>
+        <td><span class="rango">$200 – $600 MXN (set ×3)</span></td>
+        <td><strong>PET hermético genérico ×3</strong><br><span class="eco">Sin luz directa, almacén fresco<br>$200–$300</span></td>
+        <td><strong>Vidrio o PET oscuro tapa metálica ×3</strong><br><span class="pro">Mayor barrera UV y humedad<br>$400–$600</span></td>
+        <td><span class="source-tag">Amazon MX / Costco / Liverpool</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Bolsas de empaque lote inicial ×200<span>Kraft + barrera interior o ziplock aluminio</span></span></td>
+        <td><span class="tag-basico">BÁSICO</span></td>
+        <td><span class="rango">$350 – $900 MXN</span></td>
+        <td><strong>Bolsa ziplock transparente 12×20 cm</strong><br><span class="eco">Para muestras y arranque<br>$350–$450 / 200 pzas</span></td>
+        <td><strong>Bolsa kraft fondo plano + ventana</strong><br><span class="pro">Presentación de venta profesional<br>$600–$900 / 200 pzas</span></td>
+        <td><span class="source-tag">MercadoLibre / Uline México</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Malla o tela de pre-secado adicional<span>Red nylon 1×1 m | Pre-secado al aire</span></span></td>
+        <td><span class="tag-opcional">OPCIONAL</span></td>
+        <td><span class="rango">$80 – $200 MXN</span></td>
+        <td><strong>Malla polietileno genérica</strong><br><span class="eco">Reduce tiempo en deshidratador<br>$80–$120</span></td>
+        <td><strong>Malla nylon grado alimenticio</strong><br><span class="pro">Más durable y fácil de limpiar<br>$150–$200</span></td>
+        <td><span class="source-tag">MercadoLibre / ferreterías locales</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Impresora de etiquetas térmica<span>Formato 50×30 mm mínimo | Rollos incluidos</span></span></td>
+        <td><span class="tag-opcional">OPCIONAL</span></td>
+        <td><span class="rango">$800 – $3,500 MXN</span></td>
+        <td><strong>DYMO LabelWriter 310</strong><br><span class="eco">Para lotes pequeños<br>$800–$1,200</span></td>
+        <td><strong>Brother QL-820NWB / Zebra ZD220</strong><br><span class="pro">WiFi, mayor velocidad<br>$2,500–$3,500</span></td>
+        <td><span class="source-tag">Amazon MX / Office Depot / Mercado Libre</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Guantes nitrilo + EPP básico (BPM)<span>Guantes ×100 | Gorro | Cubrebocas | Bata</span></span></td>
+        <td><span class="tag-esencial">ESENCIAL</span></td>
+        <td><span class="rango">$250 – $500 MXN</span></td>
+        <td><strong>Guantes nitrilo ×100 + gorro</strong><br><span class="eco">Mínimo para BPM<br>$250–$350</span></td>
+        <td><strong>Kit BPM completo (guantes, gorro, bata, cubrebocas)</strong><br><span class="pro">Cumplimiento NOM-251-SSA1<br>$400–$500</span></td>
+        <td><span class="source-tag">Amazon MX / Sam's Club / Farmacia</span> [cite: 9]</td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Activímetro (Aw meter)<span>Rango 0.00–1.00 Aw | Digital</span></span></td>
+        <td><span class="tag-opcional">OPCIONAL</span></td>
+        <td><span class="rango">$2,500 – $12,000 MXN</span></td>
+        <td><strong>AquaLab / genérico portátil básico</strong><br><span class="eco">Crítico si hay intención de venta formal<br>$2,500–$4,000</span></td>
+        <td><strong>Rotronic AwTherm / AquaLab 4TE</strong><br><span class="pro">Referencia de laboratorio<br>$8,000–$12,000</span></td>
+        <td><span class="source-tag">GreenTech Instruments / Amazon MX</span> [cite: 9]</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr class="section-divider">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-title">
+      <p>Basado en cotizaciones reales de mercado [cite: 10]</p>
+      <h2>Resumen de Inversión por Escenario</h2>
     </div>
   </div>
 
   <table class="cost-table2">
     <thead>
       <tr>
-        <th style="width:28%">Equipo / Insumo</th>
-        <th style="width:15%">Rango MXN</th>
-        <th style="width:22%">Opción económica</th>
-        <th style="width:22%">Opción recomendada</th>
-        <th style="width:13%">Dónde comprar</th>
+        <th>Escenario</th>
+        <th>Descripción</th>
+        <th>Total estimado</th>
+        <th>Incluye opcionales</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="col-item">Deshidratador de bandejas<span>10 bandejas, 800–1000 W</span></span></td>
-        <td><span class="rango">$1,900 – $6,890</span></td>
-        <td><strong>WETTE 10 bandejas 800W</strong><br><span class="eco">✓ Mínimo viable</span></td>
-        <td><strong>VEVOR 10 bandejas 1000W</strong><br><span class="pro">★ Mejor circulación 360°</span></td>
-        <td><span class="source-tag">MercadoLibre</span></td>
+        <td><strong>Mínimo viable</strong> [cite: 11]</td>
+        <td>Solo esenciales, todo opción económica [cite: 11]</td>
+        <td><strong class="rango">~$4,100 MXN</strong> [cite: 11]</td>
+        <td>No [cite: 11]</td>
       </tr>
       <tr>
-        <td><span class="col-item">Báscula digital<span>5–10 kg, precisión ±1 g</span></span></td>
-        <td><span class="rango">$129 – $600</span></td>
-        <td><strong>Genérica</strong><br><span class="eco">✓ LCD, pilas AA</span></td>
-        <td><strong>Adir 1676 / RHINO</strong><br><span class="pro">★ Plato inox</span></td>
-        <td><span class="source-tag">Amazon MX</span></td>
+        <td><strong>Recomendado</strong> [cite: 11]</td>
+        <td>Esenciales pro + básicos económicos [cite: 11]</td>
+        <td><strong class="rango">~$6,500–$8,000 MXN</strong> [cite: 11]</td>
+        <td>Parcial [cite: 11]</td>
       </tr>
       <tr class="total">
-        <td><strong>TOTAL ESTIMADO</strong></td>
-        <td><strong class="rango">$4,056 – $11,688</strong></td>
-        <td colspan="3">
-          <strong>Escenario mínimo viable:</strong> ~$4,056 MXN · 
-          <strong>Escenario recomendado:</strong> ~$6,500–$8,000 MXN.
-        </td>
+        <td><strong>Full profesional</strong> [cite: 11]</td>
+        <td>Todo opción pro + todos los opcionales [cite: 11]</td>
+        <td><strong class="rango">~$11,700 MXN</strong> [cite: 11]</td>
+        <td>Sí [cite: 11]</td>
       </tr>
     </tbody>
   </table>
+  <div style="font-size:11px; color:var(--text-muted); margin-top:8px;">
+    * No incluyen IVA, costo de envío, etiquetas impresas ni mesa de trabajo[cite: 12]. Los precios esenciales suman ~$2,960 MXN en opción eco; el deshidratador es el mayor costo de capital individual[cite: 13].
+  </div>
+
+  <hr class="section-divider">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <div class="section-title">
+      <p>Fuentes verificadas para cotización directa [cite: 14]</p>
+      <h2>Directorio de Proveedores Recomendados</h2>
+    </div>
+  </div>
+
+  <table class="cost-table2">
+    <thead>
+      <tr>
+        <th style="width:25%">Proveedor</th>
+        <th style="width:25%">Sitio / Ubicación</th>
+        <th style="width:50%">Qué comprar aquí</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>MercadoLibre México</strong> </td>
+        <td>mercadolibre.com.mx </td>
+        <td>Deshidratadores, selladoras, básculas, pH metros, refractómetros, bolsas </td>
+      </tr>
+      <tr>
+        <td><strong>Amazon México</strong> </td>
+        <td>amazon.com.mx </td>
+        <td>Básculas, termómetros, pH metros (YINMIK, Apera), deshidratadores </td>
+      </tr>
+      <tr>
+        <td><strong>Zona Chef</strong> </td>
+        <td>zonachef.com.mx </td>
+        <td>Deshidratador MIGSA 10 bandejas acero inoxidable (nivel PYME) </td>
+      </tr>
+      <tr>
+        <td><strong>VEVOR México</strong> </td>
+        <td>vevor.mx </td>
+        <td>Deshidratadores acero inox con certificación FDA </td>
+      </tr>
+      <tr>
+        <td><strong>Contenedores de Plástico México</strong> </td>
+        <td>contenedoresdeplasticomexico.com </td>
+        <td>Cubetas HDPE grado alimenticio 20 L </td>
+      </tr>
+      <tr>
+        <td><strong>GreenTech Instruments</strong> </td>
+        <td>En línea / Polanco CDMX </td>
+        <td>Refractómetros (Milwaukee, Atago) y medidores pH calibrados </td>
+      </tr>
+      <tr>
+        <td><strong>Uline México</strong> </td>
+        <td>uline.mx </td>
+        <td>Bolsas kraft, aluminio laminado, empaque a granel </td>
+      </tr>
+      <tr>
+        <td><strong>Hanna Instruments México</strong> </td>
+        <td>hannainst.com.mx </td>
+        <td>pH metros profesionales grado alimenticio (HI98161, HI99161) </td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>
 
 <div class="manual-footer">
-  <p><strong>Manual de Producción · Tisana de Cascara</strong></p>
-  <p style="margin-top:6px">Para uso interno. Cumplir con NOM-251-SSA1 y NOM-051-SCFI/SSA1.</p>
+  <p><strong>Manual de Producción · Tisana de Cascara (Pulpa de Cereza de Cafeto) · NOM-251-SSA1 · NOM-051-SCFI/SSA1</strong> [cite: 16]</p>
+  <p style="margin-top:6px">Elaborado para: SSC GOURMET DISTRIBUTION</p>
 </div>
 </body>
 </html>
