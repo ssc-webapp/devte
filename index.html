@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual de Producción Artesanal — Cascara</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Paleta Blanco y Negro */
+    --bg-main: #FFFFFF;
+    --bg-alt: #FFFFFF;
+    --text-main: #000000;
+    --text-muted: #444444;
+    --border-color: #000000;
+    --header-bg: #000000;
+    --header-text: #FFFFFF;
+
+    /* Colores de Énfasis Conservados */
+    --terracotta: #C1440E;
+    --gold: #B8860B;
+    --sage: #7A8C6E;
+    --accent-red: #8B0000;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* TIPOGRAFÍAS ASIGNADAS */
+  h1, h2, h3, .section-num, .progress-count, .cap-stat .big {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .resources-table, .cost-table2, .step-params, .checklist-grid, .check-label {
+    font-family: Arial, sans-serif;
+  }
+
+  /* COVER */
+  .cover {
+    background: var(--header-bg);
+    color: var(--header-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-content { position: relative; z-index: 1; max-width: 700px; }
+
+  .cover-badge {
+    display: inline-block;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    margin-bottom: 40px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+  }
+
+  .cover h1 {
+    font-size: clamp(52px, 8vw, 82px);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: var(--header-text);
+  }
+
+  .cover h1 em {
+    font-style: normal;
+    color: var(--terracotta);
+  }
+
+  .cover-sub {
+    font-size: 16px;
+    color: #CCCCCC;
+    letter-spacing: 1px;
+    margin-bottom: 60px;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cover-meta-item { text-align: center; }
+  .cover-meta-item .num {
+    font-size: 42px;
+    color: var(--header-text);
+    display: block;
+  }
+  .cover-meta-item .lbl {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #AAAAAA;
+  }
+
+  .cover-cherry { margin-top: 60px; opacity: 0.8; }
+
+  /* PAGE LAYOUT */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .section-num {
+    font-size: 58px;
+    color: var(--text-main);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .section-title h2 {
+    font-size: 32px;
+    color: var(--text-main);
+  }
+
+  .section-title p {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 60px 0;
+  }
+
+  /* INTRO CARD */
+  .intro-card {
+    background: var(--bg-alt);
+    border-left: 4px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 24px 28px;
+    margin-bottom: 48px;
+  }
+
+  .intro-card h3 {
+    font-size: 24px;
+    color: var(--text-main);
+    margin-bottom: 8px;
+  }
+
+  .intro-card p { font-size: 15px; }
+
+  /* CHECKLIST */
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 600px) { .checklist-grid { grid-template-columns: 1fr; } }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    padding: 14px 16px;
+    border-radius: 0px;
+  }
+
+  .check-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+  }
+
+  .check-label { flex: 1; }
+  .check-label strong { display: block; font-size: 14px; font-weight: bold; color: var(--text-main); }
+  .check-label span { font-size: 12px; color: var(--text-muted); }
+
+  .check-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  .tag-esencial { background: #FDECEA; color: var(--terracotta); border: 1px solid var(--terracotta); }
+  .tag-opcional { background: #EEF4EC; color: var(--sage); border: 1px solid var(--sage); }
+  .tag-basico { background: #FFF3E0; color: #E65100; border: 1px solid #E65100; }
+
+  /* PROGRESS BAR */
+  .checklist-progress {
+    background: var(--bg-alt);
+    border: 1px solid var(--border-color);
+    padding: 16px 20px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .progress-label { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; color: var(--text-main); flex-shrink: 0; }
+  .progress-bar-bg {
+    flex: 1;
+    background: #EEEEEE;
+    height: 8px;
+    border: 1px solid var(--border-color);
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--text-main);
+    width: 0%;
+  }
+  .progress-count { font-size: 20px; color: var(--text-main); flex-shrink: 0; }
+
+  /* EQUIPMENT DIAGRAM */
+  .diagram-container {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    margin-bottom: 32px;
+    overflow-x: auto;
+  }
+
+  .diagram-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* RESOURCES TABLE */
+  .resources-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    font-size: 13px;
+  }
+
+  .resources-table th {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid var(--border-color);
+  }
+
+  .resources-table td {
+    padding: 11px 16px;
+    border: 1px solid var(--border-color);
+    vertical-align: top;
+  }
+
+  .qty { font-weight: bold; color: var(--text-main); }
+  .note-small { font-size: 11px; color: var(--text-muted); display: block; margin-top: 4px; }
+
+  /* PROCESS STEPS */
+  .process-flow {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 32px;
+  }
+
+  .process-flow::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background: var(--border-color);
+  }
+
+  .step {
+    position: relative;
+    margin-bottom: 28px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .step-dot {
+    position: absolute;
+    left: -32px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg-main);
+    border: 3px solid var(--border-color);
+    top: 18px;
+    flex-shrink: 0;
+  }
+
+  .step-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 18px 20px;
+    flex: 1;
+  }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .step-num-badge {
+    background: var(--header-bg);
+    color: var(--header-text);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .step-title {
+    font-size: 22px;
+    color: var(--text-main);
+  }
+
+  .step-params {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .param {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    padding: 4px 10px;
+    font-size: 12px;
+    color: var(--text-main);
+  }
+
+  .param strong { font-weight: bold; }
+
+  .step-alert {
+    background: #FFFFFF;
+    border: 1px dashed var(--border-color);
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text-main);
+  }
+
+  .step-alert::before { content: '⚠ IMPORTANTE: '; }
+
+  /* CAPACITY TABLE */
+  .capacity-box {
+    background: var(--bg-main);
+    border: 2px solid var(--border-color);
+    padding: 32px;
+    margin-bottom: 32px;
+  }
+
+  .capacity-box h3 {
+    font-size: 26px;
+    margin-bottom: 24px;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+  }
+
+  .capacity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 600px) { .capacity-grid { grid-template-columns: 1fr; } }
+
+  .cap-stat {
+    text-align: center;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+  }
+
+  .cap-stat .big {
+    font-size: 48px;
+    color: var(--text-main);
+    display: block;
+    line-height: 1;
+  }
+
+  .cap-stat .unit { font-family: Arial, sans-serif; font-weight: bold; font-size: 13px; color: var(--text-main); display: block; margin-top: 4px; }
+  .cap-stat .desc { font-family: Arial, sans-serif; font-size: 11px; color: var(--text-muted); margin-top: 8px; display: block; }
+
+  .capacity-notes { font-size: 13px; color: var(--text-main); line-height: 1.8; }
+  .capacity-notes li { margin-left: 20px; }
+
+  /* COST ESTIMATE */
+  .cost-table2 { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:16px; }
+  .cost-table2 th { background:var(--header-bg); color:var(--header-text); padding:10px 12px; text-align:left; font-weight:bold; font-size:11px; text-transform:uppercase; letter-spacing:0.8px; border: 1px solid var(--border-color); }
+  .cost-table2 td { padding:10px 12px; border: 1px solid var(--border-color); vertical-align:top; }
+  .cost-table2 .total td { font-weight:bold; border-top:2px solid var(--border-color); background:#EEEEEE; }
+  .rango { font-weight:bold; color:var(--text-main); white-space:nowrap; }
+  .eco { color:var(--text-muted); font-size:11px; }
+  .pro { color:var(--text-main); font-weight: bold; font-size:11px; }
+  .source-tag { display:inline-block; border:1px solid var(--border-color); font-size:10px; padding:2px 6px; margin-top:3px; font-weight: bold;}
+  .nota-small { font-size:11px; color:var(--text-muted); display:block; margin-top:4px; font-style: italic;}
+  .col-item { font-weight:bold; color:var(--text-main); }
+  .col-item span { display:block; font-weight:normal; font-size:11px; color:var(--text-muted); margin-top:2px; }
+
+  /* FOOTER */
+  .manual-footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 2px solid var(--border-color);
+    color: var(--text-main);
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-content">
+    <div class="cover-badge">Manual de Producción Artesanal · Escala PYME</div>
+    <h1>Tisana de<br><em>Cascara</em></h1>
+    <p class="cover-sub">Pulpa deshidratada de cereza de cafeto · Coffea arabica</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="num">10</span>
+        <span class="lbl">Pasos de proceso</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="num">1–2 kg</span>
+        <span class="lbl">Producción diaria seca</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="num">~$8K</span>
+        <span class="lbl">Inversión inicial MXN</span>
+      </div>
+    </div>
+    <svg class="cover-cherry" width="120" height="120" viewBox="0 0 120 120">
+      <circle cx="35" cy="70" r="22" fill="#C1440E" opacity="0.8"/>
+      <circle cx="75" cy="75" r="22" fill="#8B0000" opacity="0.8"/>
+      <path d="M35 48 Q55 20 85 15 Q75 35 55 48" fill="none" stroke="#4A7C59" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="55" y1="48" x2="35" y2="48" stroke="#4A7C59" stroke-width="3" stroke-linecap="round"/>
+      <line x1="55" y1="48" x2="75" y2="53" stroke="#4A7C59" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
+
+<div class="page">
+  <div class="intro-card">
+    <h3>¿Qué es la cascara?</h3>
+    <p>
+      La cascara (del árabe <em>qishr</em>) es la piel y mucílago deshidratado de la cereza de café. En México es un subproducto subutilizado del beneficiado húmedo que, correctamente procesado, produce una tisana afrutada con notas de tamarindo, rosa mosqueta e hibisco. Contiene cafeína (aprox. 111 mg/L), polifenoles y antioxidantes. Es legal como alimento y no requiere registro sanitario especial en escala artesanal, aunque sí aplican buenas prácticas de higiene conforme a <strong>NOM-251-SSA1</strong>.
+    </p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-title">
+      <p>Checklist de adquisición</p>
+      <h2>Equipo a Conseguir</h2>
+    </div>
+  </div>
+
+  <div class="checklist-grid">
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Deshidratador de bandejas</strong>
+        <span>5–10 bandejas, termostato 35–75 °C, 500–1000 W. Ej. Excalibur 9, Cosori, marca china genérica.</span>
+      </div>
+      <span class="check-tag tag-esencial">ESENCIAL</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Báscula digital de cocina</strong>
+        <span>Capacidad 5 kg, precisión ±1 g. Para control de lotes y rendimiento.</span>
+      </div>
+      <span class="check-tag tag-esencial">ESENCIAL</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Tinas o baldes de plástico grado alimenticio</strong>
+        <span>15–20 L, HDPE o PP (código reciclaje ▲2 o ▲5). Para lavado y remojo.</span>
+      </div>
+      <span class="check-tag tag-esencial">ESENCIAL</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Colador / tamiz de malla fina (acero inox.)</strong>
+        <span>Malla 1–2 mm para escurrir y clasificar la pulpa ya seca.</span>
+      </div>
+      <span class="check-tag tag-esencial">ESENCIAL</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Selladora de bolsas por impulso</strong>
+        <span>30–40 cm de ancho. Para sellar bolsas kraft o aluminio-laminado.</span>
+      </div>
+      <span class="check-tag tag-esencial">ESENCIAL</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Termómetro digital de sonda</strong>
+        <span>Rango −10 °C a 200 °C. Para verificar temperatura interior del deshidratador.</span>
+      </div>
+      <span class="check-tag tag-esencial">ESENCIAL</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Tablas de corte y cuchillos (acero inox.)</strong>
+        <span>Uso exclusivo para alimentos. Para separar manualmente pulpa dañada.</span>
+      </div>
+      <span class="check-tag tag-basico">BÁSICO</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Contenedores herméticos de almacenamiento</strong>
+        <span>Vidrio o PET con sello, oscuros o en lugar sin luz. 3–5 unidades de 1–2 kg.</span>
+      </div>
+      <span class="check-tag tag-basico">BÁSICO</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Refractómetro manual (Brix)</strong>
+        <span>Rango 0–32° Brix. Para verificar la infusión final como CQ.</span>
+      </div>
+      <span class="check-tag tag-basico">BÁSICO</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Medidor de pH</strong>
+        <span>Digital portátil. La infusión debe quedar pH 3.0–4.5 para estabilidad.</span>
+      </div>
+      <span class="check-tag tag-basico">BÁSICO</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Mesa de trabajo de acero inoxidable</strong>
+        <span>O tabla grande sobre superficie lavable. Para extensión y selección de pulpa.</span>
+      </div>
+      <span class="check-tag tag-basico">BÁSICO</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Malla o tela de secado adicional</strong>
+        <span>Red de nylon 1×1 m. Para pre-secado al sol (optativo, reduce tiempo de deshidratador).</span>
+      </div>
+      <span class="check-tag tag-opcional">OPCIONAL</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Activímetro (Aw meter)</strong>
+        <span>Mide actividad de agua; garantiza vida de anaquel. Alta inversión pero crítico para escala.</span>
+      </div>
+      <span class="check-tag tag-opcional">OPCIONAL</span>
+    </div>
+
+    <div class="check-item">
+      <div class="check-box"></div>
+      <div class="check-label">
+        <strong>Impresora de etiquetas (térmica)</strong>
+        <span>Para lote, fecha y datos NOM-051. Ej. DYMO, Brother QL, Zebra ZD220.</span>
+      </div>
+      <span class="check-tag tag-opcional">OPCIONAL</span>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-title">
+      <p>Referencia visual</p>
+      <h2>Diagrama del Equipo</h2>
+    </div>
+  </div>
+
+  <div class="diagram-container">
+    <p class="diagram-title">Distribución y flujo del equipo en espacio artesanal (~6 m²)</p>
+    <svg viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-height:520px">
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#A0522D"/>
+        </marker>
+        <filter id="shadow">
+          <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.12)"/>
+        </filter>
+      </defs>
+
+      <rect width="820" height="520" fill="#FFFFFF" rx="8" stroke="#000000" stroke-width="1"/>
+      <rect x="10" y="10" width="800" height="500" fill="none" stroke="#000000" stroke-width="1" rx="6" stroke-dasharray="4,3"/>
+
+      <rect x="20" y="20" width="180" height="480" fill="#FFF3E6" rx="6" opacity="0.5"/>
+      <text x="110" y="42" text-anchor="middle" font-family="'Montserrat',sans-serif" font-size="11" fill="#C1440E" font-weight="bold">Zona Recepción</text>
+
+      <rect x="210" y="20" width="180" height="480" fill="#F0F7EE" rx="6" opacity="0.5"/>
+      <text x="300" y="42" text-anchor="middle" font-family="'Montserrat',sans-serif" font-size="11" fill="#4A7C59" font-weight="bold">Zona Lavado</text>
+
+      <rect x="400" y="20" width="200" height="480" fill="#FFF8E7" rx="6" opacity="0.5"/>
+      <text x="500" y="42" text-anchor="middle" font-family="'Montserrat',sans-serif" font-size="11" fill="#B8860B" font-weight="bold">Zona Deshidratación</text>
+
+      <rect x="610" y="20" width="200" height="480" fill="#F5F0F8" rx="6" opacity="0.5"/>
+      <text x="710" y="42" text-anchor="middle" font-family="'Montserrat',sans-serif" font-size="11" fill="#6B3A2A" font-weight="bold">Zona Envasado / CQ</text>
+
+      <g filter="url(#shadow)">
+        <rect x="30" y="65" width="160" height="60" rx="5" fill="white" stroke="#000" stroke-width="1.5"/>
+        <rect x="30" y="65" width="160" height="8" rx="5" fill="#E8A87C"/>
+        <line x1="40" y1="125" x2="40" y2="145" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <line x1="180" y1="125" x2="180" y2="145" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <text x="110" y="93" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#000" font-weight="bold">Mesa de Trabajo</text>
+      <text x="110" y="110" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">Selección inicial</text>
+
+      <g filter="url(#shadow)">
+        <rect x="50" y="165" width="120" height="50" rx="5" fill="white" stroke="#000" stroke-width="1.5"/>
+        <rect x="60" y="175" width="100" height="30" rx="3" fill="#EEE"/>
+        <rect x="70" y="180" width="60" height="18" rx="2" fill="#000"/>
+        <text x="100" y="193" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FF00">0.000 g</text>
+      </g>
+      <text x="110" y="233" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Báscula digital</text>
+      <text x="110" y="247" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">±1 g · 5 kg cap.</text>
+
+      <g filter="url(#shadow)">
+        <ellipse cx="255" cy="115" rx="55" ry="18" fill="#CDEAF5" stroke="#7EC8E3" stroke-width="1.5"/>
+        <rect x="200" y="100" width="110" height="55" rx="0 0 6 6" fill="#DDEEFA" stroke="#7EC8E3" stroke-width="1.5"/>
+        <ellipse cx="255" cy="100" rx="55" ry="18" fill="#EAF5FB" stroke="#7EC8E3" stroke-width="1.5"/>
+        <text x="255" y="125" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#1A6FA0">Agua + NaClO</text>
+        <ellipse cx="330" cy="165" rx="45" ry="15" fill="#CDEAF5" stroke="#7EC8E3" stroke-width="1.5"/>
+        <rect x="285" y="150" width="90" height="45" fill="#DDEEFA" stroke="#7EC8E3" stroke-width="1.5"/>
+        <ellipse cx="330" cy="150" rx="45" ry="15" fill="#EAF5FB" stroke="#7EC8E3" stroke-width="1.5"/>
+        <text x="330" y="175" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#1A6FA0">Enjuague</text>
+      </g>
+      <text x="285" y="220" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Tinas de lavado</text>
+      <text x="285" y="234" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">15–20 L · PP/HDPE</text>
+
+      <g filter="url(#shadow)">
+        <path d="M225 280 Q285 340 345 280" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="285" y1="280" x2="285" y2="310" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <path d="M235 285 Q285 335 335 285" fill="none" stroke="#666" stroke-width="1" opacity="0.5"/>
+        <path d="M240 278 L240 305 M250 276 L250 308 M260 274 L260 310 M270 273 L270 311 M285 272 L285 312 M295 273 L295 311 M305 274 L305 310 M315 276 L315 308 M325 278 L325 305" stroke="#666" stroke-width="0.8" opacity="0.6"/>
+        <rect x="215" y="275" width="20" height="8" rx="4" fill="#000"/>
+        <rect x="345" y="275" width="20" height="8" rx="4" fill="#000"/>
+      </g>
+      <text x="285" y="345" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Tamiz / Colador</text>
+      <text x="285" y="359" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">Acero inox · malla 1–2 mm</text>
+
+      <g filter="url(#shadow)">
+        <rect x="412" y="70" width="175" height="220" rx="8" fill="#FFF" stroke="#000" stroke-width="2"/>
+        <rect x="420" y="85" width="159" height="22" rx="3" fill="white" stroke="#000" stroke-width="1"/>
+        <rect x="420" y="113" width="159" height="22" rx="3" fill="white" stroke="#000" stroke-width="1"/>
+        <rect x="420" y="141" width="159" height="22" rx="3" fill="white" stroke="#000" stroke-width="1"/>
+        <rect x="420" y="169" width="159" height="22" rx="3" fill="white" stroke="#000" stroke-width="1"/>
+        <rect x="420" y="197" width="159" height="22" rx="3" fill="white" stroke="#000" stroke-width="1"/>
+        <rect x="424" y="88" width="151" height="16" rx="2" fill="#C1440E" opacity="0.4"/>
+        <rect x="424" y="116" width="151" height="16" rx="2" fill="#C1440E" opacity="0.4"/>
+        <rect x="424" y="144" width="151" height="16" rx="2" fill="#C1440E" opacity="0.4"/>
+        <rect x="424" y="172" width="151" height="16" rx="2" fill="#C1440E" opacity="0.4"/>
+        <rect x="424" y="200" width="151" height="16" rx="2" fill="#C1440E" opacity="0.4"/>
+        <rect x="415" y="230" width="170" height="50" rx="5" fill="#000"/>
+        <circle cx="440" cy="255" r="12" fill="none" stroke="#FFF" stroke-width="2"/>
+        <text x="440" y="259" text-anchor="middle" font-family="monospace" font-size="8" fill="#FFF">55°C</text>
+        <rect x="460" y="242" width="50" height="26" rx="3" fill="#333"/>
+        <text x="485" y="253" text-anchor="middle" font-family="monospace" font-size="8" fill="#00FF00">08:30</text>
+        <text x="485" y="264" text-anchor="middle" font-family="monospace" font-size="7" fill="#AAA">HRS RESTANTES</text>
+        <circle cx="570" cy="250" r="15" fill="none" stroke="#FFF" stroke-width="1.5"/>
+        <line x1="570" y1="236" x2="570" y2="264" stroke="#FFF" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="556" y1="250" x2="584" y2="250" stroke="#FFF" stroke-width="1" stroke-dasharray="2,2"/>
+      </g>
+      <text x="499" y="310" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Deshidratador de bandejas</text>
+      <text x="499" y="324" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">500–1000 W · 5–10 bandejas · 55–65 °C</text>
+
+      <g filter="url(#shadow)">
+        <rect x="622" y="70" width="175" height="55" rx="8" fill="#EEE" stroke="#000" stroke-width="1.5"/>
+        <rect x="630" y="100" width="159" height="8" rx="2" fill="#CC3300" opacity="0.9"/>
+        <rect x="635" y="80" width="60" height="15" rx="3" fill="#555"/>
+        <circle cx="720" cy="87" r="10" fill="#CC0000"/>
+        <text x="720" y="91" text-anchor="middle" font-family="sans-serif" font-size="8" fill="white">ON</text>
+        <rect x="640" y="115" width="35" height="50" rx="3" fill="#FFF" stroke="#000" stroke-width="1"/>
+        <rect x="683" y="115" width="35" height="50" rx="3" fill="#FFF" stroke="#000" stroke-width="1"/>
+        <rect x="726" y="115" width="35" height="50" rx="3" fill="#FFF" stroke="#000" stroke-width="1"/>
+        <text x="658" y="146" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#000">CASCARA</text>
+        <text x="701" y="146" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#000">CASCARA</text>
+      </g>
+      <text x="710" y="185" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Selladora por impulso</text>
+      <text x="710" y="199" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">30–40 cm · para bolsas kraft/alu</text>
+
+      <g filter="url(#shadow)">
+        <rect x="625" y="230" width="20" height="80" rx="10" fill="#DDD" stroke="#000" stroke-width="1.5"/>
+        <circle cx="635" cy="220" r="12" fill="#88CCFF" stroke="#000" stroke-width="1.5" opacity="0.7"/>
+        <text x="635" y="225" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#000">°Bx</text>
+        <rect x="660" y="225" width="14" height="90" rx="7" fill="#DDD" stroke="#000" stroke-width="1.5"/>
+        <rect x="657" y="215" width="20" height="30" rx="5" fill="#000"/>
+        <text x="667" y="235" text-anchor="middle" font-family="monospace" font-size="7" fill="#FFF">pH</text>
+        <text x="667" y="245" text-anchor="middle" font-family="monospace" font-size="8" fill="white">3.8</text>
+      </g>
+      <text x="670" y="335" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Refractómetro + pH</text>
+      <text x="670" y="349" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">Control de calidad</text>
+
+      <g filter="url(#shadow)">
+        <rect x="715" y="230" width="90" height="50" rx="5" fill="white" stroke="#000" stroke-width="1.5"/>
+        <rect x="725" y="238" width="70" height="28" rx="3" fill="#EEE"/>
+        <rect x="730" y="242" width="55" height="18" rx="2" fill="#000"/>
+        <text x="757" y="255" text-anchor="middle" font-family="monospace" font-size="10" fill="#00FF00">50.0 g</text>
+      </g>
+      <text x="760" y="297" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#000" font-weight="bold">Báscula de dosif.</text>
+      <text x="760" y="311" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#333">Pesado de sachets</text>
+
+      <line x1="110" y1="150" x2="110" y2="158" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <line x1="170" y1="190" x2="210" y2="130" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+      <line x1="285" y1="240" x2="285" y2="268" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <line x1="345" y1="310" x2="405" y2="200" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <line x1="587" y1="150" x2="618" y2="100" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <line x1="587" y1="250" x2="618" y2="270" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+
+      <text x="163" y="168" font-family="Arial,sans-serif" font-size="9" fill="#000" font-weight="bold">Pesado</text>
+      <text x="215" y="175" font-family="Arial,sans-serif" font-size="9" fill="#000" font-weight="bold">Lavado</text>
+      <text x="310" y="265" font-family="Arial,sans-serif" font-size="9" fill="#000" font-weight="bold">Escurrido</text>
+      <text x="360" y="230" font-family="Arial,sans-serif" font-size="9" fill="#000" font-weight="bold">Secado</text>
+      <text x="590" y="120" font-family="Arial,sans-serif" font-size="9" fill="#000" font-weight="bold">Envasado</text>
+      <text x="592" y="265" font-family="Arial,sans-serif" font-size="9" fill="#000" font-weight="bold" font-style="italic">CQ</text>
+    </svg>
+  </div>
+
+  <hr class="section-divider">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-title">
+      <p>Checklist de recursos</p>
+      <h2>Insumos y Materiales</h2>
+    </div>
+  </div>
+
+  <table class="resources-table">
+    <thead>
+      <tr>
+        <th>Insumo</th>
+        <th>Cantidad referencia (por lote ~10 kg pulpa fresca)</th>
+        <th>Especificación / Notas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Pulpa de cereza de café (cascara fresca)</strong></td>
+        <td class="qty">10 kg</td>
+        <td>Recién despulpada, sin fermentar más de 8 hrs. Variedad arábica preferida.
+          <span class="note-small">Rendimiento aprox. 10–15% → 1.0–1.5 kg de producto seco.</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Agua potable</strong></td>
+        <td class="qty">~60 L</td>
+        <td>Para lavado (3 cambios) + enjuague. Agua de red o filtrada.
+          <span class="note-small">No usar agua de pozo sin cloro residual.</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Hipoclorito de sodio (NaClO) grado alimenticio</strong></td>
+        <td class="qty">~6 mL</td>
+        <td>Diluir a 200 ppm para desinfección. Solución al 5.25–6% (cloro doméstico sin fragancia).
+          <span class="note-small">200 ppm = 6 mL de cloro 6% en 15 L agua.</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Bolsas kraft con barrera interior</strong>
+          <br><em style="font-size:12px">o bolsas resellables aluminio-laminado</em>
+        </td>
+        <td class="qty">30–50 pzas / lote</td>
+        <td>Para empaques de 25–50 g (infusión individual) o 100 g (granel).
+          <span class="note-small">Proveedores: Uline México, Alibaba, mercado local de envases.</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Sachets filtrantes de papel / tela no tejida</strong></td>
+        <td class="qty">Opcional: 50–100 pzas</td>
+        <td>Si se quiere presentación tipo "teabag". Papel de fibra larga o PLA compostable.
+          <span class="note-small">Tamaño sugerido: 6×8 cm, 3–5 g de cascara por sachet.</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Etiquetas adhesivas</strong></td>
+        <td class="qty">30–50 pzas</td>
+        <td>Con: nombre del producto, peso neto, lote, fecha de producción/caducidad, modo de preparación.
+          <span class="note-small">Obligatorio conforme a NOM-051-SCFI/SSA1.</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Electricidad</strong></td>
+        <td class="qty">5–12 kWh / lote</td>
+        <td>Para deshidratador (10–14 hrs a 500–1000 W).
+          <span class="note-small">Costo aprox. $10–20 MXN por lote a tarifa residencial.</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Guantes de nitrilo</strong></td>
+        <td class="qty">1 par / sesión</td>
+        <td>Desechables. Obligatorio para BPM (Buenas Prácticas de Manufactura).
+          <span class="note-small">Caja de 100: ~$200–300 MXN.</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Cubre-bocas / gorra</strong></td>
+        <td class="qty">1 por operador</td>
+        <td>BPM básicas. No son negociables para venta.</td>
+      </tr>
+      <tr>
+        <td><strong>Solución sanitizante para superficies</strong></td>
+        <td class="qty">~200 mL</td>
+        <td>Para limpiar mesa y utensilios antes de operar. Amonio cuaternario o alcohol 70%.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr class="section-divider">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-title">
+      <p>Procedimiento paso a paso</p>
+      <h2>Proceso de Producción</h2>
+    </div>
+  </div>
+
+  <div class="process-flow">
+
+    <div class="step">
+      <div class="step-dot"></div>
+      <div class="step-card">
+        <div class="step-header">
+          <span class="step-num-badge">PASO 01</span>
+          <span class="step-title">Recepción y selección de la pulpa</span>
+        </div>
+        <p>Recibir la pulpa fresca recién salida del despulpador. Extenderla sobre la mesa de trabajo y hacer una selección visual: retirar pulpa ennegrecida, fermentada, con moho visible o con presencia de insectos. Solo debe usarse pulpa de color rojizo-naranja brillante.</p>
+        <div class="step-params">
+          <div class="param"><strong>Tiempo:</strong> 15–30 min por lote de 10 kg</div>
+          <div class="param"><strong>Temp. ambiente:</strong> &lt; 30 °C idealmente</div>
+        </div>
+        <div class="step-alert">La pulpa fresca se fermenta rápido. Procesar dentro de las 6–8 hrs post-despulpado o refrigerar a &lt;5 °C si se acumula.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-dot"></div>
+      <div class="step-card">
+        <div class="step-header">
+          <span class="step-num-badge">PASO 02</span>
+          <span class="step-title">Pesado inicial del lote</span>
+        </div>
+        <p>Pesar la pulpa seleccionada en la báscula y anotar el peso en el registro de lote (cuaderno o hoja de control). Este dato permite calcular el rendimiento de cada procesamiento y detectar variaciones.</p>
+        <div class="step-params">
+          <div class="param"><strong>Registro:</strong> Fecha, peso bruto, origen del café</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-dot"></div>
+      <div class="step-card">
+        <div class="step-header">
+          <span class="step-num-badge">PASO 03</span>
+          <span class="step-title">Lavado y desinfección</span>
+        </div>
+        <p>Sumergir la pulpa en la tina 1 con solución de NaClO a <strong>200 ppm</strong> durante 5 minutos con agitación manual. Enjuagar con agua limpia en tina 2, al menos 2 veces, hasta que el agua salga transparente y sin olor a cloro.</p>
+        <div class="step-params">
+          <div class="param"><strong>Solución:</strong> 6 mL cloro 6% en 15 L agua</div>
+          <div class="param"><strong>Tiempo contacto:</strong> 5 min</div>
+          <div class="param"><strong>Enjuagues:</strong> 2 mínimo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-dot"></div>
+      <div class="step-card">
+        <div class="step-header">
+          <span class="step-num-badge">PASO 04</span>
+          <span class="step-title">Escurrido y pre-secado</span>
+        </div>
+        <p>Pasar la pulpa lavada por el tamiz para eliminar exceso de agua. <em>Opcional pero recomendado:</em> extender en malla a la sombra (no al sol directo) por 1–2 horas antes de meter al deshidratador. Esto reduce el tiempo de deshidratación y el consumo eléctrico.</p>
+        <div class="step-params">
+          <div class="param"><strong>Tiempo pre-secado:</strong> 1–2 hrs</div>
+          <div class="param"><strong>Condición:</strong> Sombra, ventilación natural</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-dot"></div>
+      <div class="step-card">
+        <div class="step-header">
+          <span class="step-num-badge">PASO 05</span>
+          <span class="step-title">Deshidratación</span>
+        </div>
+        <p>Distribuir la pulpa en capas delgadas (no más de 1 cm de grosor) sobre las bandejas del deshidratador. No amontonar; el aire debe circular entre las piezas. Programar a <strong>55–65 °C</strong> por <strong>10–14 horas</strong>. A mitad del proceso (~5–6 hrs), voltear la pulpa manualmente y rotar las bandejas de posición.</p>
+        <div class="step-params">
+          <div class="param"><strong>Temperatura:</strong> 55–65 °C</div>
+          <div class="param"><strong>Tiempo:</strong> 10–14 hrs</div>
+          <div class="param"><strong>Grosor capa:</strong> ≤ 1 cm</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="section-divider">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-title">
+      <p>Proyección operativa</p>
+      <h2>Capacidad Diaria de Procesamiento</h2>
+    </div>
+  </div>
+
+  <div class="capacity-box">
+    <h3>Con 1 deshidratador estándar (5–10 bandejas)</h3>
+    <div class="capacity-grid">
+      <div class="cap-stat">
+        <span class="big">10</span>
+        <span class="unit">kg pulpa fresca / ciclo</span>
+        <span class="desc">Capacidad de carga del deshidratador a 1 cm de grosor</span>
+      </div>
+      <div class="cap-stat">
+        <span class="big">1–1.5</span>
+        <span class="unit">kg cascara seca / ciclo</span>
+        <span class="desc">Rendimiento 10–15% del peso fresco.</span>
+      </div>
+      <div class="cap-stat">
+        <span class="big">2–3</span>
+        <span class="unit">kg / día (2 ciclos)</span>
+        <span class="desc">Ciclo nocturno + diurno de ~12 hrs cada uno.</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <div class="section-title">
+      <p>Referencia financiera</p>
+      <h2>Inversión Inicial Estimada</h2>
+    </div>
+  </div>
+
+  <table class="cost-table2">
+    <thead>
+      <tr>
+        <th style="width:28%">Equipo / Insumo</th>
+        <th style="width:15%">Rango MXN</th>
+        <th style="width:22%">Opción económica</th>
+        <th style="width:22%">Opción recomendada</th>
+        <th style="width:13%">Dónde comprar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="col-item">Deshidratador de bandejas<span>10 bandejas, 800–1000 W</span></span></td>
+        <td><span class="rango">$1,900 – $6,890</span></td>
+        <td><strong>WETTE 10 bandejas 800W</strong><br><span class="eco">✓ Mínimo viable</span></td>
+        <td><strong>VEVOR 10 bandejas 1000W</strong><br><span class="pro">★ Mejor circulación 360°</span></td>
+        <td><span class="source-tag">MercadoLibre</span></td>
+      </tr>
+      <tr>
+        <td><span class="col-item">Báscula digital<span>5–10 kg, precisión ±1 g</span></span></td>
+        <td><span class="rango">$129 – $600</span></td>
+        <td><strong>Genérica</strong><br><span class="eco">✓ LCD, pilas AA</span></td>
+        <td><strong>Adir 1676 / RHINO</strong><br><span class="pro">★ Plato inox</span></td>
+        <td><span class="source-tag">Amazon MX</span></td>
+      </tr>
+      <tr class="total">
+        <td><strong>TOTAL ESTIMADO</strong></td>
+        <td><strong class="rango">$4,056 – $11,688</strong></td>
+        <td colspan="3">
+          <strong>Escenario mínimo viable:</strong> ~$4,056 MXN · 
+          <strong>Escenario recomendado:</strong> ~$6,500–$8,000 MXN.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="manual-footer">
+  <p><strong>Manual de Producción · Tisana de Cascara</strong></p>
+  <p style="margin-top:6px">Para uso interno. Cumplir con NOM-251-SSA1 y NOM-051-SCFI/SSA1.</p>
+</div>
+</body>
+</html>
